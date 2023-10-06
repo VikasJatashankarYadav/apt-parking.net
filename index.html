@@ -4,9 +4,7 @@
         <meta name="csrf-token" content="WIl2cejzqlkPaoPLKrtI0O7PIWlNN4QcF5Jc59Lz">
 
         <title>APT Parking</title>
-        <link rel = "icon" href =  
-"apt-logo.png" 
-        type = "image/x-icon"> 
+        <link rel = "icon" href = "apt-logo.png" type = "image/x-icon"> 
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -14,7 +12,7 @@
 
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>   
-        <script>
+<script>
 
 
             * {box-sizing:border-box}
@@ -105,6 +103,11 @@
   to {opacity: 1}
 }
 
+.centered-div {
+  text-align: center; /* Horizontally centers the button within the div */
+  
+}
+
 
         </script>
     </head>
@@ -133,21 +136,38 @@
 
 </nav>
 
-            <!-- Page Heading -->
-                            <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Greetings from APT Parking; Where Parking Meets Simplicity..
-        </h2>
-                    </div>
-                </header>
-            
             <!-- Page Content FFB67B -->
             <main style="background-color: #D86E39;">
                 <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
 
             <!-- Make sure to fill parking information dynamically -->
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <div class="relative mx-auto grid max-w-[40rem] grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2">
+                        <div class="flex">
+                            <div class="ml-6" style="text-align: center; ">
+                                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                                    Greetings from APT Parking, your smart parking solution.
+                                </h2>
+                                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                                    Where Parking Meets Simplicity.
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="ml-6">
+                                <div style="padding-left: 60px;">
+                                    <a href="https://www.youtube.com" target="_blank">
+                                    <button style="background-color: #0074e4; color: #fff; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">Schedule a Tour</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
@@ -236,8 +256,8 @@
                     
 
                     <!-- Next and previous buttons -->
-                    <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+                    <a class="prev" onclick="plusSlides(-1)" style="margin: 10px; cursor: pointer; font-weight: bold; font-size: 18px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)" style="margin: 10px; cursor: pointer; font-weight: bold; font-size: 18px;">&#10095;</a>
                 </div>
 
                 <!-- The dots/circles -->
@@ -252,23 +272,24 @@
 
             <!-- Make sure to fill parking information dynamically -->
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+                <div class="p-6 text-gray-900" style="text-align: center;">
                 <header>
-                    <h2 class="text-xl font-semibold text-gray-900" style="text-align: center; padding-bottom: 5px;">
+                    <h2 class="text-xl font-semibold text-gray-900" style="padding-bottom: 5px;">
                         Mission Statement:
                     </h2>
                 </header>
-                At APT Parking, our mission is to revolutionize apartment parking management by providing innovative and user-centric solutions. <br>
+                <i>
                 We are dedicated to simplifying the parking experience for both apartment management teams and tenants. <br>
                 Through cutting-edge technology and exceptional service, we aim to streamline parking administration, enhance transparency, and improve parking utilization. <br>
-                Our commitment is to create harmony within apartment communities, ensuring that every parking spot is managed effortlessly, and every tenant's parking needs are met with ease. <br>
                 We strive to be the driving force behind efficient and stress-free parking solutions for all.
+                </i>
                 </div>  
             </div>
 
             
 
             <!-- 
+                
             
              -->
 
@@ -279,9 +300,11 @@
                         Where to find us?
                     </h2>
                 </header>
-                Contact - Eric Gonzales<br>
-                Email - eric@aptparking.net<br>
-                Phone - +1 720-296-0918
+                <div style="padding: 10px;">
+                    <a href="https://www.youtube.com" target="_blank">
+                        <button style="background-color: #0074e4; color: #fff; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">Schedule a Tour</button>
+                    </a><br><br>
+                </div>
                 </div>  
             </div>
         </div>
@@ -289,24 +312,33 @@
             </main>
         </div>
     <script>
-let slideIndex = 0;
-showSlides();
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 5000); // Change image every 4 seconds
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
 
     </script>
